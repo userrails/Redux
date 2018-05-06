@@ -255,7 +255,118 @@ const rootReducer = (state = initialState, action) => {
 export default rootReducer;
 ```
 
-User spread operator 
+Use spread operator 
+
+```
+import {ADD_ARTICLE} from "../constants/action-types";
+
+const initialState = {
+  articles=[]
+};
+
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_ARTICLE:
+      return {...state, articles: [...state.articles, action.payload]};
+    default:
+      return state;
+  }
+};
+export default rootReducer;
+```
+
+In the example above the initial state is left untouched.
+The initial article arrary doesn't change in place.
+The initial state object doesn't change as well. The resulting state is a copy of the initial state.
+There are two key points for avoiding mutations in Redux:
+* Using concat(), slice(), and ...spread for arrays
+* using Object.assign() and ...spread for objects
+
+The object spread operator is still in stage 3, install it to avoid a syntaxError Unexpected token when using the object spread operator in Babel:
+
+```
+npm i --save-dev babel-plugin-transform-object-rest-spread
+```
+
+Open up .babelrc and update the configuration:
+```
+"presets": ["env", "react"],
+"plugins": ["transform-object-rest-spread"]
+```
+
+Redux store methods
+Redux itself is a small library (2KB). The Redux store exposes a simple API for managing the state.
+Some important methods are:
+* getState for accessing the current state of the application
+* dispatch for dispatcing an action
+* subscribe for listening on state changes
+
+To use above methods, we need to export as global variables the store and the action we created earlier.
+Create src/js/index.js and update the file with the following code:
+
+```
+import store from "../js/store/index";
+import { addArticle } from "../js/actions/index";
+window.store = store;
+window.addArticle = addArticle;
+```
+
+Open up src/index.js as well, cleanup it's content and update it as follows:
+```
+import index from "./js/index"
+```
+
+Now run webpack dev server (or Parcel) with:
+
+```
+npm start
+```
+
+head over http://localhost:8080/ and open up the console with F12.
+
+Since we have exported the store as a global variable we can access its methods. Give it a try!
+
+Start by accessing the current state:
+```
+store.getState()
+```
+
+output:
+{articles: Array(0)}
+
+Zero articles. In fact we haven't update the initial state yet.
+
+To make things interesting we can listen for state updates with subscribe. The subscribe method accepts a callback that will fire whenever an action is dispatched.
+Dispatching an action means notifying the store that we want to change the state.
+
+Register the callback with:
+```
+store.subscribe(() => console.log('Hello Redux!!'))
+```
+
+To change the state in Redux we need to dispatch an action. To dispatch an action you have to call the dispatch method.
+
+we have an action at our disposal: addArticle for adding a new item to the state.
+
+Let's dispatch the action with:
+```
+store.dispatch(addArticle({name: 'React redux tutorials for beginners', id: 1}))
+```
+Running the above code, will see
+Hello Redux!!
+
+To verify that the state changed run again:
+```
+store.getState()
+```
+
+The output should be:
+```
+{articles: Array(1)}
+```
+
+
+
 
 
 
