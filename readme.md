@@ -57,8 +57,8 @@ Let's create the store to wrap up the state.
 
 Go to React development environment and install Redux:
 
-cd reduxapp
-npm i redux --save-dev
+' cd reduxapp
+' npm i redux --save-dev
 
 create dir for the store
 mkdir -p src/js/store
