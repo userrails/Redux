@@ -402,7 +402,9 @@ What does mapDispatchToProps do in react-redux? it works for actions, which conn
 
 App component and Redux store
 ------------------------------
+mapStateToProps connects a portion of the Redux state to the props of a React component. is this enough for connecting Redux with React? No, it's not.
 
+To start off connecting 
 
 
 
