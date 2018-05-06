@@ -385,6 +385,25 @@ To demonstrate how React and Redux work together, we'll build a super simple app
 * a List component for displaying articles
 * a Form component for adding new articles
 
+React-Redux
+------------
+React-redux is a Redux binding for React. It is a library for connecting Redux and React in an efficient way.
+the most important method you'll work with is connect.
+React-redux library connects a React component with the Redux store.
+
+You will use connect with two or three arguments depending on the use case. The fundamental things to know:
+* the mapStateToProps function
+* the mapDispatchToProps function
+
+what does mapStateToProps do in react-redux? it connects a part of the Redux state to the props of a React component.
+By doing so a connected React component will have access to the exact part of the store it needs.
+
+What does mapDispatchToProps do in react-redux? it works for actions, which connects Redux actions to React props. This way a connected React component will be able to dispatch actions.
+
+App component and Redux store
+------------------------------
+
+
 
 
 
