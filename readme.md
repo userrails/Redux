@@ -365,7 +365,25 @@ The output should be:
 {articles: Array(1)}
 ```
 
+Connecting React with Redux
+---------------------------
+Now we understand:
+* how to access the current state with getState
+* how to dispatch an action dispatch
+* how to listen for state changes with subscribe
 
+Now let us work with React and Redux together.
+should i call getState() with a React component? how do i dispatch an action from a React component? And so on:
+For React there is react-redux.
+
+``
+npm i react-redux --save-dev
+``
+
+To demonstrate how React and Redux work together, we'll build a super simple application. The application is made of the following components:
+* an App component
+* a List component for displaying articles
+* a Form component for adding new articles
 
 
 
