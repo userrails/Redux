@@ -62,17 +62,21 @@ cd reduxapp
 npm i redux --save-dev
 ```
 create dir for the store
-``` mkdir -p src/js/store
+
+```
+mkdir -p src/js/store
+```
 
 create a new file index.js in src/js/store and finally initialize the store:
-//src/js/store/index.js
-``` import {createStore} from 'redux';
-``` import rootReducer from '../reducers/index';
+ ```
+ //src/js/store/index.js
+ import {createStore} from 'redux';
+ import rootReducer from '../reducers/index';
 
-``` const store = createStore(rootReducer);
+ const store = createStore(rootReducer);
 
-``` export default store;
-
+ export default store;
+```
 
 createStore is the function for creating the Redux store.
 createStore takes a reducer as the first argument, rootReducer in our case.
@@ -104,19 +108,26 @@ cannot do that.
 Reducers will do nothing than returning the initial state.
 
 * Create a directory for the root reducer
-``` mkdir -p src/js/reducers
+``` 
+mkdir -p src/js/reducers
+```
 
 * create a new file named as index.js in the src/js/reducers
 // src/js/reducers/index.js
 
-```const initialState = {
-  ```posts: []
-```};
+```
+ const initialState = {
+  posts: []
+ };
+```
 
-```const rootReducer = (state = initialState, action) => state;
+```
+const rootReducer = (state = initialState, action) => state;
+```
 
-```export default rootReducer;
-
+```
+export default rootReducer;
+```
 
 Redux actions
 --------------
@@ -148,12 +159,16 @@ action creator.
 now put everything together by creating a simple Redux action.
 
 Create a directory for the actions:
-```mkdir -p src/js/actions
+```
+mkdir -p src/js/actions
+```
 
 Then create a new file named index.js in src/js/actions:
 
 // src/js/actions/index.js
-```export const addPost = post => ({ type: "ADD_POST", payload: post });
+```
+export const addPost = post => ({ type: "ADD_POST", payload: post });
+```
 
 Here type property is a string.
 The reducer will use the string to determine how to calculate the next state.
@@ -161,7 +176,9 @@ The reducer will use the string to determine how to calculate the next state.
 String has posibility of typos and duplicates, so it is better to declare type
 property as constant.
 
-```mkdir -p src/js/constants
+```
+mkdir -p src/js/constants
+```
 
 Then create a new file named action-types.js into the src/js/constants
 
@@ -242,20 +259,4 @@ User spread operator
 
 
 
-
-
-
-
-
-
-
 Ref:https://www.valentinog.com/blog/react-redux-tutorial-beginners/
-
-
-
-
-
-
-
-
-
