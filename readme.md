@@ -404,9 +404,129 @@ App component and Redux store
 ------------------------------
 mapStateToProps connects a portion of the Redux state to the props of a React component. is this enough for connecting Redux with React? No, it's not.
 
-To start off connecting 
+We are using Provider to connect React and Redux.
+
+Provider is an higher order component coming from react-redux.
+
+Provider wraps up your React application and makes it aware of the entire Redux's store.
+In Redux the store manages everything. React must talk to the store for accessing the state and dispatching the actions.
+
+Open up src/js/index.js, write below code.
+
+```
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import store from "./store/index";
+import App from "./components/App";
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById("app")
+);
+```
+From above script, we analyse that Provider wraps up the entire REact application and it gets the store as a prop.
+As we now requires App component, let's create that. App should import a List component and render itself.
+
+Create the directory for holding the components:
+```
+mkdir -p src/js/components
+cd src/js/components
+touch App.js
+```
+
+```
+//src/js/components/App.js
+import React from "react";
+import List from "./List";
+
+const App = () => (
+  <div className="row mt-5">
+    <div className="col-md-4 offset-md-1">
+      <h2>Articles</h2>
+      <List />
+    </div>
+  </div>
+);
+
+export default App;
+```
+
+Now create a List component.
+
+List component and Redux state
+------------------------------
+Our new component, List, will interact with Redux store.
+Note: The key for connecting a React component with Redux is connect.
+
+Connect takes at least one argument.
+
+Since we want List to get a list of articles it's matter of connecting state.articles with the component, with, mapStateToProps.
+Now create List.js component.
+
+```
+touch src/js/components/List.js
+
+import React from "react";
+import { connect } from "react-redux";
+
+const mapStateToProps = state => {
+  return { articles: state.articles }
+};
+
+const ConnectedList = ({ articles }) => (
+  <ul className="list-group list-group-flush">
+    {articles.map(el => (
+      <li className="list-group-item" key={el.id}>{el.title}</li>
+    ))
+    }
+  </ul>
+);
+
+const List = connect(mapStateToProps)(ConnectedList);
+
+export default List;
+```
+
+The List component receives the prop articles which is a copy of the articles array. Such array lives inside the Redux state we created earlier. It comes from the reducer which is shown below:
+
+```
+const initialState = {
+  articles: []
+};
+
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_ARTICLE:
+      return { ...state, articles: [...state.articles, action.payload]};
+    default: 
+      return state;
+  }
+};
+```
+
+Then it's a matter of using the prop inside JSX for generating a list of articles:
+
+```
+{articles.map(el => (
+  <li className="list-group-item" key={el.id}>
+    {el.title}
+  </li>
+))}
+```
+
+Note: make habit of validating props with PropTypes
+
+Finally component is exported as List. List is the result of connecting the stateless component ConnectedList with the Redux store.
+A stateless component does not have it's own local state. Data gets passed to it as props.
+
+first understand the connect and mapStateToProps, then move to next session.
 
 
+Form component and Redux Actions
+---------------------------------
 
 
 Ref:https://www.valentinog.com/blog/react-redux-tutorial-beginners/
