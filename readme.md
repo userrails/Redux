@@ -527,6 +527,25 @@ first understand the connect and mapStateToProps, then move to next session.
 
 Form component and Redux Actions
 ---------------------------------
+The form component is complex than List. It is the form for adding new items to our application.
 
+Plus it is a stateful component.
+
+A stateful component in React is a component carrying it's own local state.
+
+Note: Even when using Redux it is totally fine to have stateful components.
+
+Not every piece of the application's state should go inside Redux.
+
+In this example we don't want any other component to be aware of the Form local state.
+
+what does the component do?
+it contains some logic for updating the local state upon a form submission.
+
+Plus it receives a Redux action as Prop. This way it can update the global state by dispatching the addArticle action.
+
+```
+touch src/js/components/Form.js
+```
 
 Ref:https://www.valentinog.com/blog/react-redux-tutorial-beginners/
