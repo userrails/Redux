@@ -8,6 +8,7 @@ function Counter(props) {
       <h1>Counter Application example</h1>
       <p>Counter: {props.count}</p>
       <button onClick={props.onIncrementClick}>Increment</button>
+      <button onClick={props.onDecrementClick}>Decrement</button>
     </div>
   )
 }
@@ -34,6 +35,10 @@ function mapDispatchToProps (dispatch) {
       const action = {type: 'INCREMENT'};
       dispatch(action);
       // now this action calls on the reducer() which is inside store/index.js
+    },
+    onDecrementClick: () => {
+      const action = {type: 'DECREMENT'};
+      dispatch(action);
     }
   }
 }
