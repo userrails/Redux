@@ -30,7 +30,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps (dispatch) {
   return {
     onIncrementClick: () => {
-      console.log("clickin")
+      console.log("clickin");
+      const action = {type: 'INCREMENT'};
+      dispatch(action);
+      // now this action calls on the reducer() which is inside store/index.js
     }
   }
 }
