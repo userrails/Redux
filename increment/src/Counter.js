@@ -20,13 +20,13 @@ function mapStateToProps(state) {
   }
 }
 
-
 //const mapDispatchToProps = (dispatch) => ({
 //  onIncrementClick: () => {
 //    console.log("clickin")
 //  }
 // });
 // you can define using constant as shown above commented lines
+
 function mapDispatchToProps (dispatch) {
   return {
     onIncrementClick: () => {

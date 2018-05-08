@@ -9,7 +9,13 @@ const initialState = {
 // create reducer function that takes two arguments state, action
 const reducer = (state=initialState, action) => {
   console.log('reducer running', action);
-  return state;
+
+  switch(action.type) {
+    case 'INCREMENT':
+      return Object.assign({}, state, {count: state.count + 1});
+    default:
+      return state;
+  }
 }
 
 // now create a store
