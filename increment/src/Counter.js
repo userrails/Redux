@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Counter(props) {
-  // console.log('render', props);
+  console.log('render', props);
   return (
     <div>
       <h1>Counter Application example</h1>
@@ -13,7 +13,7 @@ function Counter(props) {
 }
 
 function mapStateToProps(state) {
-  //console.log('mapStateToProps', state);
+  console.log('mapStateToProps', state);
 
   return {
     count: state.count
