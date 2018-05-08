@@ -651,10 +651,3 @@ Redux form consists of following things:
 * a single reducer
 * a higher order form component
 * a field component
-
-----------------------
-create-react-app increment
-npm install redux react-redux
-----------------------
-
-
