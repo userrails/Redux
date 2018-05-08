@@ -8,7 +8,7 @@ const initialState = {
 
 // create reducer function that takes two arguments state, action
 const reducer = (state=initialState, action) => {
-  console.log('reducer running', action);
+  // console.log('reducer running', action);
   return state;
 }
 

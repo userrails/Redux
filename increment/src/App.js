@@ -5,6 +5,7 @@ import store from './store/'
 
 class App extends Component {
   render() {
+    // console.log('store', store);
     return (
       <div className="App">
         <Counter store={store}/>
