@@ -6,6 +6,33 @@ Redux is based on simplified version of Flux, framework dev by fb
 store--component--action--reducer--store
 Redux is framework agnostic. Learn it once, use it on Vuejs, Angular
 
+Setup the environment:
+- Webpack for bundling
+- Babel for transpiling ES code
+- Gulp for task running
+
+Alternatives: Browerify, TypeScript, RollupJS, or even ES5
+
+Actions and action creators:
+- communicate data from View to main Reducer
+- it often do not mutate the data
+- You can put Asyn logic (fetch, put, etc)
+
+Reducers:
+- recieve data from actions
+- receive current state
+- create new state using old state and content of the action data
+
+Store:
+- connect entire application
+- subscribe directly with a callback or use a connector to work with React
+- Dispatch
+
+Dispatch:
+- Sends data through store which invokes the main reducer with current state and
+  new data
+- run the actions and start the data cycle
+
 Also see https://github.com/reduxjs/redux-devtools
 https://github.com/reactjs/redux
 
