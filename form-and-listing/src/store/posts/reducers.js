@@ -2,10 +2,10 @@ import { applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
-  posts: [{id: '1001', title: 'Default value'}]
+  posts: [{id: '1001', title: 'Default value'}],
 };
 
-const rootReducer = (state=initialState, action) => {
+const postReducer = (state=initialState, action) => {
   console.log('1. post reducer is running');
   switch(action.type) {
     case 'ADD_POST':
@@ -17,4 +17,4 @@ const rootReducer = (state=initialState, action) => {
   }
 };
 
-export default rootReducer;
+export default postReducer;
