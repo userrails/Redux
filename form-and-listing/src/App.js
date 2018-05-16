@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import postStore from './store/';
+import store from './store/';
 import Form from './components/posts/Form';
 import Listings from './components/posts/Listings';
 
 class App extends Component {
   render() {
+  console.log("store", store)
     return (
       <div className="App">
         <h1>Fill out the form</h1>
 
-        <Form store={postStore} />
-        <Listings store={postStore} />
+        <Form store={store} />
+        <Listings store={store} />
       </div>
     );
   }
