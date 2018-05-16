@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from './store/';
-import Form from './components/posts/Form';
-import Listings from './components/posts/Listings';
+import PostForm from './components/posts/Form';
+import PostListings from './components/posts/Listings';
+import BlogForm from './components/blogs/Form';
+import BlogListings from './components/blogs/Listings';
 
 class App extends Component {
   render() {
@@ -11,8 +13,10 @@ class App extends Component {
       <div className="App">
         <h1>Fill out the form</h1>
 
-        <Form store={store} />
-        <Listings store={store} />
+        <PostForm store={store} />
+        <PostListings store={store} />
+        <BlogForm store={store} />
+        <BlogListings store={store} />
       </div>
     );
   }
