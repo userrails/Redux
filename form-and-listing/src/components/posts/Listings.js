@@ -9,7 +9,7 @@ class Listings extends React.Component {
         <ul>
           {
             this.props.posts.map(post => (
-              <li key={post.id}>{post.id}--{post.title}</li>
+              <li key={post.id}>Post -> {post.id}--{post.title}</li>
             ))};
         </ul>
       );
