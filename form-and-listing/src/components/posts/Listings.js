@@ -25,8 +25,8 @@ class Listings extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('4. state-listings', state.posts)
-  return {posts: state.posts}
+  console.log('4. state-listings', state)
+  return {posts: state.postReducer.posts}
 }
 
 export default connect(mapStateToProps)(Listings);
