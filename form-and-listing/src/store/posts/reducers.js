@@ -1,4 +1,5 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
   posts: [{id: '1001', title: 'Default value'}]
@@ -13,6 +14,6 @@ const rootReducer = (state=initialState, action) => {
   }
 }
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 export default store;
