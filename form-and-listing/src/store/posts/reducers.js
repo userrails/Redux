@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware } from 'redux';
+import { applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const initialState = {
@@ -17,8 +17,4 @@ const rootReducer = (state=initialState, action) => {
   }
 };
 
-const store = createStore(rootReducer, composeWithDevTools(
-
-));
-
-export default store
+export default rootReducer;
