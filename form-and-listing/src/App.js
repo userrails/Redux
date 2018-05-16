@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import postStore from './store/posts/';
+import postStore from './store/';
 import Form from './components/posts/Form';
 import Listings from './components/posts/Listings';
 
