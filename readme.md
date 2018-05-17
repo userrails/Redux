@@ -709,3 +709,37 @@ rootReducer.js
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
 https://www.reddit.com/r/reactjs/comments/47mwdd/a_better_file_structure_for_reactredux/
 https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346
+
+
+Some libraries we need to install
+
+Search the libraries here: https://www.npmjs.com/
+```
+npm install react react-dom
+
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+npm install --save-dev redux-devtools-extension
+
+npm install -g create-react-app
+   - create-react-app name-of-my-app
+   - cd name-of-my-app
+   - npm start (starts the dev server)
+   - npm run build (bundles the app into static files for production)
+   - npm test (starts the test runner)
+   - npm run eject (removes and copy build deps, config files & scripts into the app dir ,, cannot be rollback)
+
+react-router vs react-router-dom
+---------------------------------
+react-router contains common components between react-router-dom and react-router-native.
+For web development use, react-router-dom
+If using React Native use, react-router-native
+Also there are many packages available like
+
+react-router
+react-router-dom
+react-router-native
+react-router-redux
+react-router-config
+```
