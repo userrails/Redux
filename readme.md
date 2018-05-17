@@ -699,9 +699,9 @@ product/
 App.js
 index.js
 registerServiceWorker.js
-store/
-  configureStore.js
+configureStore.js
 actionTypes.js
+rootReducer.js
 
 
 ````
