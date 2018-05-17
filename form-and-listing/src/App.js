@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import store from './store/configureStore';
+import store from './configureStore';
 import PostForm from './post/PostForm';
 import PostList from './post/PostList';
 import BlogForm from './blog/BlogForm';
