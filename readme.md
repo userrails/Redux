@@ -681,6 +681,7 @@ Redux form consists of following things:
 
 Application Directory Structure:
 --------------------------------
+````
 app/
   Header.js
   Sidebar.js
@@ -695,6 +696,7 @@ product/
   ProductItem.js
   ProductImage.js
   productReducer.js
+````
 
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
 
