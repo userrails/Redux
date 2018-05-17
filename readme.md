@@ -696,6 +696,14 @@ product/
   ProductItem.js
   ProductImage.js
   productReducer.js
+App.js
+index.js
+registerServiceWorker.js
+store/
+  configureStore.js
+actionTypes.js
+
+
 ````
 
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
