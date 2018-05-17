@@ -2,12 +2,14 @@ import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import postReducer from '../store/posts/reducers';
 import blogReducer from '../store/blogs/reducers';
+import categoryReducer from '../category/categoryReducer';
 import { applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
   postReducer,
-  blogReducer
+  blogReducer,
+  categoryReducer
 })
 
 const store = createStore(rootReducer, composeWithDevTools(
