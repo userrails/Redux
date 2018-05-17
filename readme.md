@@ -678,3 +678,24 @@ Redux form consists of following things:
 * a single reducer
 * a higher order form component
 * a field component
+
+Application Directory Structure:
+--------------------------------
+app/
+  Header.js
+  Sidebar.js
+  App.js
+  reducers.js
+  routes.js
+product/
+  ProductComponent.js
+  ProductContainer.js
+  ProductActions.js
+  ProductList.js
+  ProductItem.js
+  ProductImage.js
+  productReducer.js
+
+https://marmelab.com/blog/2015/12/17/react-directory-structure.html
+
+
