@@ -742,4 +742,6 @@ react-router-dom
 react-router-native
 react-router-redux
 react-router-config
+
+We should almost never have to install react-router directly
 ```
