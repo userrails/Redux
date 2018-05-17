@@ -1,4 +1,4 @@
-import {ADD_POST} from '.././store/actionTypes';
+import {ADD_POST} from '../actionTypes';
 
 export function PostAction(post) {
   return {

@@ -1,4 +1,4 @@
-import {ADD_CATEGORY} from '.././store/actionTypes';
+import {ADD_CATEGORY} from '../actionTypes';
 
 export function CategoryAction(category) {
   return {
