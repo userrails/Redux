@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import store from './store/';
+import store from './store/configureStore';
 import PostForm from './post/PostForm';
 import PostList from './post/PostList';
 import BlogForm from './blog/BlogForm';
@@ -21,7 +21,6 @@ class App extends Component {
         <BlogList store={store} />
         <CategoryForm store={store} />
         <CategoryList store={store} />
-        
       </div>
     );
   }
