@@ -733,8 +733,10 @@ npm install -g create-react-app
 react-router vs react-router-dom
 ---------------------------------
 react-router contains common components between react-router-dom and react-router-native.
+We should almost never have to install react-router directly
 For web development use, react-router-dom
 If using React Native use, react-router-native
+Both will install react-router as a dependency
 Also there are many packages available like
 
 react-router
@@ -742,6 +744,4 @@ react-router-dom
 react-router-native
 react-router-redux
 react-router-config
-
-We should almost never have to install react-router directly
 ```
