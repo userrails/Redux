@@ -709,3 +709,114 @@ rootReducer.js
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
 https://www.reddit.com/r/reactjs/comments/47mwdd/a_better_file_structure_for_reactredux/
 https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346
+
+
+Some libraries we need to install
+
+Search the libraries here: https://www.npmjs.com/
+```
+npm install react react-dom
+
+npm install --save redux
+npm install --save react-redux
+npm install --save-dev redux-devtools
+npm install --save-dev redux-devtools-extension
+
+npm install -g create-react-app
+   - create-react-app name-of-my-app
+   - cd name-of-my-app
+   - npm start (starts the dev server)
+   - npm run build (bundles the app into static files for production)
+   - npm test (starts the test runner)
+   - npm run eject (removes and copy build deps, config files & scripts into the app dir ,, cannot be rollback)
+
+react-router vs react-router-dom
+---------------------------------
+react-router contains common components between react-router-dom and react-router-native.
+We should almost never have to install react-router directly
+For web development use, react-router-dom
+If using React Native use, react-router-native
+Both will install react-router as a dependency
+Also there are many packages available like
+
+react-router
+react-router-dom
+react-router-native
+react-router-redux
+react-router-config
+```
+```
+npm install --save react-router-dom
+
+On App.js
+-----------
+// using ES6 modules
+import React from 'react'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+)
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+)
+
+const Topic = ({match}) => (
+  <div>
+    <h2>{match.params.topicId}</h2>
+  </div>
+)
+
+const Topics = ({match}) => (
+  <div>
+    <h2>Topics</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>
+          Rendering with React
+        </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>
+          Components
+        </Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/props-v-state`}>
+          Props vs state
+        </Link>
+      </li>
+    </ul>
+    
+    <Route path={`${match.path}/:topicId`} component={Topic}/>
+    <Route exact path={match.path} render={() => (
+      <h3>Please select a topic.</h3>
+    )}/>
+  </div>
+)
+
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/topics">Topics</Link></li>
+      </ul>
+      
+      </hr>
+      
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/topics" component={Topics} />
+    </div>
+  </Router>
+)
+
+export default BasicExample;
+```
