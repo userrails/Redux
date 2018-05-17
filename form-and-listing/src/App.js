@@ -10,13 +10,11 @@ import CategoryList from './category/CategoryList';
 import Routes from './routes';
 import Navbar from './app/Navbar';
 import Footer from './app/Footer';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
   render() {
   console.log("store", store)
     return (
-      <Router>
       <div className="App">
         <Navbar />
         <Routes />
@@ -31,7 +29,6 @@ class App extends Component {
         <CategoryList store={store} />
         <Footer />
       </div>
-      </Router>
     );
   }
 }
