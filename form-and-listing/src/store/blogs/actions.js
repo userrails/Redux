@@ -1,4 +1,4 @@
-import {ADD_BLOG} from '../.././store/blogs/actionTypes';
+import {ADD_BLOG} from '../.././store/actionTypes';
 
 export function addBlogAction(blog) {
   return {
