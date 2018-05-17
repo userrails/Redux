@@ -699,5 +699,5 @@ product/
 ````
 
 https://marmelab.com/blog/2015/12/17/react-directory-structure.html
-
-
+https://www.reddit.com/r/reactjs/comments/47mwdd/a_better_file_structure_for_reactredux/
+https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346
