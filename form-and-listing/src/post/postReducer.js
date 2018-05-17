@@ -1,8 +1,5 @@
-import { applyMiddleware } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
 const initialState = {
-  posts: [{id: '1001', title: 'Default value'}],
+  posts: [{id: '1001', title: 'Default value'}]
 };
 
 const postReducer = (state=initialState, action) => {

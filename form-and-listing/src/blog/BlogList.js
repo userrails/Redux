@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-class Listings extends React.Component {
+class BlogList extends React.Component {
   render () {
-    console.log('5.propstest-list', this.props.posts);
-    if (this.props.posts) {
+    console.log('5.propstest-list', this.props.blogs);
+    if (this.props.blogs) {
       return (
         <ul>
           {
-            this.props.posts.map(post => (
-              <li key={post.id}>Post -> {post.id}--{post.title}</li>
+            this.props.blogs.map(blog => (
+              <li key={blog.id}>Blog -> {blog.id}--{blog.title}</li>
             ))};
         </ul>
       );
@@ -26,7 +26,7 @@ class Listings extends React.Component {
 
 const mapStateToProps = state => {
   console.log('4. state-listings', state)
-  return {posts: state.postReducer.posts}
+  return {blogs: state.blogReducer.blogs}
 }
 
-export default connect(mapStateToProps)(Listings);
+export default connect(mapStateToProps)(BlogList);

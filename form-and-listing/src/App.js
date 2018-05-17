@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import store from './store/';
-import PostForm from './components/posts/Form';
-import PostListings from './components/posts/Listings';
-import BlogForm from './components/blogs/Form';
-import BlogListings from './components/blogs/Listings';
+import PostForm from './post/PostForm';
+import PostList from './post/PostList';
+import BlogForm from './blog/BlogForm';
+import BlogList from './blog/BlogList';
 import CategoryForm from './category/CategoryForm';
 import CategoryList from './category/CategoryList';
 
@@ -16,9 +16,9 @@ class App extends Component {
         <h1>Fill out the form</h1>
 
         <PostForm store={store} />
-        <PostListings store={store} />
+        <PostList store={store} />
         <BlogForm store={store} />
-        <BlogListings store={store} />
+        <BlogList store={store} />
         <CategoryForm store={store} />
         <CategoryList store={store} />
         

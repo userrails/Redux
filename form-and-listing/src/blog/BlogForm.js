@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addBlogAction } from '../.././store/blogs/actions';
+import { BlogAction } from './BlogAction';
 import uuidv1 from 'uuid';
 
 const mapDispatchToProps = dispatch => {
   return {
-    addBlogDispatch: blog => dispatch(addBlogAction(blog))
+    addBlogDispatch: blog => dispatch(BlogAction(blog))
   };
 };
 
-class Form extends React.Component {
+class BlogForm extends React.Component {
   constructor () {
     super();
 
@@ -47,4 +47,4 @@ class Form extends React.Component {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Form);
+export default connect(null, mapDispatchToProps)(BlogForm);

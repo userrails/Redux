@@ -1,15 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPostAction } from '../.././store/posts/actions';
+import { PostAction } from './PostAction';
 import uuidv1 from 'uuid';
 
 const mapDispatchToProps = dispatch => {
   return {
-    addPostDispatch: post => dispatch(addPostAction(post))
+    addPostDispatch: post => dispatch(PostAction(post))
   };
 };
 
-class Form extends React.Component {
+class PostForm extends React.Component {
   constructor () {
     super();
 
@@ -41,10 +41,10 @@ class Form extends React.Component {
           <label htmlFor="title">Title</label>
           <input type="text" id="title" value={title} onChange={this.handleChange} />    
         </div>
-        <button type="submit">Save</button>
+        <button type="submit">Save Post</button>
       </form>
     );
   }
 }
 
-export default connect(null, mapDispatchToProps)(Form);
+export default connect(null, mapDispatchToProps)(PostForm);

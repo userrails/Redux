@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 import { combineReducers } from 'redux';
-import postReducer from '../store/posts/reducers';
-import blogReducer from '../store/blogs/reducers';
+import postReducer from '../post/postReducer';
+import blogReducer from '../blog/blogReducer';
 import categoryReducer from '../category/categoryReducer';
 import { applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
