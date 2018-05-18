@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
+import Pic from '.././assets/img/banner.jpg'
 
 class Home extends Component {
   render () {
     return (
       <div>
         <h2>Home Page</h2>
+        <img src={Pic} alt="Logo"></img>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
