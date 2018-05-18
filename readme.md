@@ -820,3 +820,27 @@ const BasicExample = () => (
 
 export default BasicExample;
 ```
+
+```
+npm install --save react-bootstrap bootstrap@3
+//Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your src/index.js file:
+// src/index.js
+
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
+
+//Import required React Bootstrap components within src/App.js file or your custom component files:
+import { Navbar, Jumbotron, Button } from 'react-bootstrap';
+
+Usage: https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js
+
+```
+
+```
+add .env file with config in root
+npm install --save dotenv
+import dotenv using require('dotenv').config(); or ES6 syntax in index.js file
+consume using process.env.CONFIG_NAME across application
+```
