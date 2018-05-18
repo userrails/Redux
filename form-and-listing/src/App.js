@@ -17,7 +17,10 @@ class App extends Component {
     return (
       <div className="App">
         <NavbarHeader />
-        <Routes />
+        
+        <div className="container">
+          <Routes />
+        </div>
 
         <h1>Fill out the form</h1>
 
