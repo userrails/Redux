@@ -7,12 +7,12 @@ import {Provider} from 'react-redux';
 class Post extends Component {
   render () {
     return(
-        <Provider store={store}>
-          <div>
-            <PostForm />
-            <PostList />
-          </div>
-        </Provider>
+      <Provider store={store}>
+        <div>
+          <PostForm />
+          <PostList />
+        </div>
+      </Provider>
     )
   }
 }
