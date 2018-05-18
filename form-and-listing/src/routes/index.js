@@ -6,6 +6,7 @@ import Contact from '.././pages/Contact';
 import About from '.././pages/About';
 import Post from '.././post/';
 import Blog from '.././blog/';
+import Category from '.././category/';
 
 export default () => {
   return (
@@ -15,6 +16,7 @@ export default () => {
       <Route path="/about" component={About} />
       <Route path="/post" component={Post} />
       <Route path="/blog" component={Blog} />
+      <Route path="/category" component={Category} />
     </Switch>
   )
 }
