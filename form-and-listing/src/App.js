@@ -8,7 +8,7 @@ import BlogList from './blog/BlogList';
 import CategoryForm from './category/CategoryForm';
 import CategoryList from './category/CategoryList';
 import Routes from './routes';
-import Navbar from './app/Navbar';
+import NavbarHeader from './app/NavbarHeader';
 import Footer from './app/Footer';
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
   console.log("store", store)
     return (
       <div className="App">
-        <Navbar />
+        <NavbarHeader />
         <Routes />
 
         <h1>Fill out the form</h1>
