@@ -839,8 +839,16 @@ Usage: https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da
 ```
 
 ```
-add .env file with config in root
+add .env file with config in root which is outside of /src and on proj dir
 npm install --save dotenv
-import dotenv using require('dotenv').config(); or ES6 syntax in index.js file
-consume using process.env.CONFIG_NAME across application
+
+Add req var pref by REACT_APP_ on .env file
+REACT_APP_SECRET_CODE=abcdef
+REACT_APP_VERSION=$npm_package_version
+REACT_APP_DOMAIN=http://localhost:3000
+REACT_APP_FOO=$REACT_APP_DOMAIN/foo
+REACT_APP_BAR=$REACT_APP_DOMAIN/bar
+
+Call the variables on the required component and you will see it's working.
+<p>Domain: <b>{process.env.REACT_APP_DOMAIN}</b></p>
 ```
