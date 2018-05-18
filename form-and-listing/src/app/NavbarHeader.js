@@ -24,6 +24,9 @@ class NavbarHeader extends Component {
               <NavItem eventKey={2} href="/post">
                 Post
               </NavItem>
+              <NavItem eventKey={2} href="/blog">
+                Blog
+              </NavItem>
               <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
                 <MenuItem eventKey={3.1}>Action</MenuItem>
                 <MenuItem eventKey={3.2}>Another action</MenuItem>
