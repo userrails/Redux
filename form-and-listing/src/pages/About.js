@@ -8,6 +8,12 @@ class About extends Component {
         <Jumbotron>
           <Grid>
             <h1>About Page</h1>
+            <p>Node Environment: <b>{process.env.NODE_ENV}</b></p>
+            <p>Secret Code: <b>{process.env.REACT_APP_SECRET_CODE}</b></p>
+            <p>React App Version: <b>{process.env.REACT_APP_VERSION}</b></p>
+            <p>Domain: <b>{process.env.REACT_APP_DOMAIN}</b></p>
+            <p><b>{process.env.REACT_APP_FOO}</b></p>
+            <p><b>{process.env.REACT_APP_BAR}</b></p>
             <p>
               <Button
                 bsStyle="success"
