@@ -5,7 +5,7 @@ import '.././assets/styles/Footer.css'
 class Footer extends Component {
   render () {
     return (
-      <div class="bg-primary">
+      <div class="bg-primary footer-section">
         <footer>
             <div class="container-fluid text-center text-md-left bg-primary">
                 <div class="row">
