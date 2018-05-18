@@ -21,11 +21,16 @@ class NavbarHeader extends Component {
               <NavItem eventKey={2} href="/about">
                 About
               </NavItem>
-              <NavItem eventKey={2} href="/post">
-                Post
+              <NavItem eventKey={2}>
+                <Link to="/post">
+                  Post
+                </Link>
               </NavItem>
-              <NavItem eventKey={2} href="/blog">
-                Blog
+
+              <NavItem eventKey={2}>
+                <Link to="/blog">
+                  Blog
+                </Link>
               </NavItem>
               <NavItem eventKey={2} href="/category">
                 Category
