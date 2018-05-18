@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-class BlogList extends React.Component {
+class BlogList extends Component {
   render () {
     console.log('5.propstest-list', this.props.blogs);
     if (this.props.blogs) {

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-class CategoryList extends React.Component {
+class CategoryList extends Component {
   render () {
     console.log('5.propstest-list', this.props.categories);
     if (this.props.categories) {

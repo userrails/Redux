@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { BlogAction } from './BlogAction';
 import uuidv1 from 'uuid';
@@ -9,7 +9,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class BlogForm extends React.Component {
+class BlogForm extends Component {
   constructor () {
     super();
 

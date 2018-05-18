@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-class PostList extends React.Component {
+class PostList extends Component {
   render () {
     console.log('5.propstest-list', this.props.posts);
     if (this.props.posts) {
