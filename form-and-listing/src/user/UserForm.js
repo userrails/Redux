@@ -9,11 +9,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-//const mapStateToProps = state => {
-  //console.log('11. state-user', state)
-  //return { user: state.userReducer.user}
-//}
-
 class UserForm extends Component {
   constructor () {
     super();
@@ -30,8 +25,7 @@ class UserForm extends Component {
     event.preventDefault();
     var first_name = event.target.elements.firstName.value;
     var last_name = event.target.elements.lastName.value;
-    console.log("first_name", first_name);
-    console.log("last_name", last_name);
+    
     this.props.addUserDispatch({first_name, last_name});
     
     this.setState({first_name: ''});
@@ -48,7 +42,7 @@ class UserForm extends Component {
         <Control.text model="lastName" id="lastName" />
 
         <button type="submit">
-          Finish Registration
+          Submit
         </button>
       </form>
     );

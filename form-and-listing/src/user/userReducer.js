@@ -7,7 +7,6 @@ const userReducer = (state=initialState, action) => {
     case 'ADD_USER':
       return {...state, user: [...state.user, action.payload]};
     default:
-      console.log('3.state-default', state);
       return state;
   }
 };

@@ -25,7 +25,6 @@ class UserDetail extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('11. state-user', state)
   return { user: state.userReducer.user}
 }
 
