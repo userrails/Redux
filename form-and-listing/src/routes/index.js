@@ -7,6 +7,7 @@ import About from '.././pages/About';
 import Post from '.././post/';
 import Blog from '.././blog/';
 import Category from '.././category/';
+import User from '.././user/';
 
 export default () => {
   return (
@@ -17,6 +18,7 @@ export default () => {
       <Route path="/post" component={Post} />
       <Route path="/blog" component={Blog} />
       <Route path="/category" component={Category} />
+      <Route path="/user" component={User} />
     </Switch>
   )
 }
