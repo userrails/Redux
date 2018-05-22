@@ -7,8 +7,8 @@ class UserDetail extends Component {
       const user = this.props.user;
       return (
         <ul>
-          <li>{user.first_name}</li>
-          <li>{user.last_name}</li>
+          <li>First Name: {user.first_name}</li>
+          <li>Last Name: {user.last_name}</li>
         </ul>
       );
     }
@@ -16,8 +16,8 @@ class UserDetail extends Component {
       const user = this.props.user.pop();
       return (
         <ul>
-          <li>{user.first_name}</li>
-          <li>{user.last_name}</li>
+          <li>First Name: {user.first_name}</li>
+          <li>Last Name: {user.last_name}</li>
         </ul>
       )
     }

@@ -9,8 +9,12 @@ class User extends Component {
     return(
       <Provider store={store}>
         <div>
-          <UserForm />
-          <UserDetail />
+          <div className="form-group">
+            <UserForm />
+          </div>
+          <div className="form-group">
+            <UserDetail />
+          </div>
         </div>
       </Provider>
     )

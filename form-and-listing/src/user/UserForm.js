@@ -34,18 +34,25 @@ class UserForm extends Component {
 
   render () {
     return (
-      <form model="user" onSubmit={this.handleSubmit}>
-        <label htmlFor="firstName">First name:</label>
-        <Control.text model="firstName" id="firstName" />
+      <form model="user" onSubmit={this.handleSubmit} className="form-inline">
+        <div class="row">
+          <label htmlFor="firstName">First name:</label>
+          <Control.text model="firstName" id="firstName" className="form-control" />
+        </div>
 
-        <label htmlFor="lastName">Last name:</label>
-        <Control.text model="lastName" id="lastName" />
+        <div class="row">
+          <label htmlFor="lastName">Last name:</label>
+          <Control.text model="lastName" id="lastName" className="form-control" />
+        </div>
 
-        <button type="submit">
-          Submit
-        </button>
+        <div class="row">
+          <button type="submit" class="btn btn-sm btn-success">
+            Submit
+          </button>  
+        </div>
       </form>
     );
   }
 }
+
 export default connect(null, mapDispatchToProps)(UserForm);
