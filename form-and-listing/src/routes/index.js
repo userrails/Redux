@@ -8,6 +8,7 @@ import Post from '.././post/';
 import Blog from '.././blog/';
 import Category from '.././category/';
 import User from '.././user/';
+import UserMember from '.././user_member/';
 
 export default () => {
   return (
@@ -19,6 +20,7 @@ export default () => {
       <Route path="/blog" component={Blog} />
       <Route path="/category" component={Category} />
       <Route path="/user" component={User} />
+      <Route path="/user_member" component={UserMember} />
     </Switch>
   )
 }
