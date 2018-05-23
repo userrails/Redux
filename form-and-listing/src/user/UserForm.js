@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { UserAction } from './UserAction';
-import { Control, Form, actions } from 'react-redux-form';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -37,12 +36,12 @@ class UserForm extends Component {
       <form model="user" onSubmit={this.handleSubmit} className="form-inline">
         <div class="row">
           <label htmlFor="firstName">First name:</label>
-          <Control.text model="firstName" id="firstName" className="form-control" />
+          <input type="text" name="firstName" id="firstName" className="form-control" />
         </div>
 
         <div class="row">
           <label htmlFor="lastName">Last name:</label>
-          <Control.text model="lastName" id="lastName" className="form-control" />
+          <input type="text" name="lastName" id="lastName" className="form-control" />
         </div>
 
         <div class="row">
