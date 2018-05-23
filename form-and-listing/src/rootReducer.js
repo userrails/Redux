@@ -1,4 +1,3 @@
-import { createStore } from 'redux';
 import { combineReducers } from 'redux';
 import postReducer from './post/postReducer';
 import blogReducer from './blog/blogReducer';
