@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { UserMemberAction } from './UserMemberAction';
-import { Control, Form, actions } from 'react-redux-form';
 import { Field, reduxForm } from 'redux-form'
 
 class UserMemberForm extends Component {
