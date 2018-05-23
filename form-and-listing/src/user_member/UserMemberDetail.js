@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class UserMemberDetail extends Component {
   render () {
     console.log("props-user-member", this.props.user_member)
-    if (this.props.user_member.constructor.name == "Object") {
+    if (this.props.user_member.constructor.name === "Object") {
       const user_member = this.props.user_member;
       return (
         <ul>
