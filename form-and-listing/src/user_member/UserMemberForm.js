@@ -28,6 +28,8 @@ const renderField = ({
   </div>
 );
 
+const categories = ['Electronics', 'Clothes', 'Jwellery', 'Stationery', 'Men Wear', 'Women Wear', 'Kitchen utilities']
+
 class UserMemberForm extends Component {
   onSubmit(values, dispatch) {
     dispatch(UserMemberAction(values));
@@ -55,6 +57,52 @@ class UserMemberForm extends Component {
             <Field name="last_name" component="input" type="text" />
           </div>
         </div>
+
+        <div class="row">
+          <div class="form-group">
+            <label htmlFor="gender">Gender:</label>
+            <label>
+              <Field name="gender" component="input" type="radio" value="male" /> {' '}
+              Male
+            </label>
+          
+            <label>
+              <Field name="gender" component="input" type="radio" value="female" />{' '}
+              Female
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <label>Categories:</label>
+
+          <div>
+            <Field name="category" component="select" className="form-control">
+              <option value="">Select Category</option>
+              {
+                categories.map(cat => (
+                  <option value={cat} key={cat}>{cat}</option>
+                ))
+              }
+            </Field> 
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="employed">Employed</label>
+          <div>
+            <Field name="employed" id="employed" component="input" type="checkbox" />
+          </div>
+        </div>
+
+        <div>
+          <label>Bio</label>
+          <div>
+            <Field name="bio" component="textarea" />
+          </div>
+        </div>
+
+        <br/>
 
         <div class="row">
           <button type="submit" class="btn btn-sm btn-success">
