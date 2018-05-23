@@ -1,5 +1,12 @@
 const initialState = {
-  user_member: {first_name: 'xxx', last_name: 'yyy'}
+  user_member: {
+    first_name: '',
+    last_name: '',
+    gender: '',
+    category: '',
+    employed: '',
+    bio: ''
+  }
 };
 
 const userMemberReducer = (state=initialState, action) => {
