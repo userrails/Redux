@@ -852,3 +852,21 @@ REACT_APP_BAR=$REACT_APP_DOMAIN/bar
 Call the variables on the required component and you will see it's working.
 <p>Domain: <b>{process.env.REACT_APP_DOMAIN}</b></p>
 ```
+
+Redux thunk:
+```
+npm install --save redux-thunk
+```
+
+```
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers/index';
+
+// Note: this API requires redux@>=3.1.0
+const store = createStore(
+  rootReducer,
+  applyMiddleware(thunk)
+);
+```
+
