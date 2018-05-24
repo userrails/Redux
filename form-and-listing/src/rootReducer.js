@@ -5,6 +5,7 @@ import categoryReducer from './category/categoryReducer';
 import userMemberReducer from './user_member/userMemberReducer';
 import userReducer from './user/userReducer';
 import { reducer as formReducer } from 'redux-form'
+import postRecordReducer from './post_record/postRecordReducer';
 
 const rootReducer = combineReducers({
   postReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   categoryReducer,
   userReducer,
   userMemberReducer,
-  form: formReducer
+  form: formReducer,
+  postRecordReducer
 });
 
 export default rootReducer;
