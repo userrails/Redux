@@ -1006,3 +1006,5 @@ axios.get('https://api-proj.herokuapp.com/posts')
     return error;
   });
 ```
+
+We get a Promise with axios.get(url) which returns the response object. We get the response data with response.data. To see status code response.status, also check response.request.
