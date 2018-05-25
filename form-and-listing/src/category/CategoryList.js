@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class CategoryList extends Component {
   render () {
-    console.log('5.propstest-list', this.props.categories);
     if (this.props.categories) {
       return (
         <ul>
@@ -25,7 +24,6 @@ class CategoryList extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('4. state-listings', state)
   return {categories: state.categoryReducer.categories}
 }
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class BlogList extends Component {
   render () {
-    console.log('5.propstest-list', this.props.blogs);
     if (this.props.blogs) {
       return (
         <ul>
@@ -25,7 +24,6 @@ class BlogList extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('4. state-listings', state)
   return {blogs: state.blogReducer.blogs}
 }
 

@@ -32,7 +32,6 @@ class PostRecordList extends Component {
   }
 
   render () {
-    console.log("555.recordlists", this.props.post_records);
     if (this.props.post_records) {
       return (
         <ul>
@@ -61,7 +60,6 @@ const mapDispatchToProps = dispatch => {
 
 
 const mapStateToProps = state => {
-  console.log('41. state-listings', state)
   return {post_records: state.postRecordReducer.post_records}
 }
 

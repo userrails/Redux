@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class PostList extends Component {
   render () {
-    console.log('5.propstest-list', this.props.posts);
     if (this.props.posts) {
       return (
         <ul>
@@ -25,7 +24,6 @@ class PostList extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log('4. state-listings', state)
   return {posts: state.postReducer.posts}
 }
 

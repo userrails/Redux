@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 class UserDetail extends Component {
   render () {
-    console.log("users-props", this.props.user);
     if (this.props.user.constructor.name === "Object") {
       const user = this.props.user;
       return (

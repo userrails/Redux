@@ -33,7 +33,6 @@ const categories = ['Electronics', 'Clothes', 'Jwellery', 'Stationery', 'Men Wea
 class UserMemberForm extends Component {
   onSubmit(values, dispatch) {
     dispatch(UserMemberAction(values));
-    console.log(values);
   }
 
   render () {
@@ -65,7 +64,7 @@ class UserMemberForm extends Component {
               <Field name="gender" component="input" type="radio" value="male" /> {' '}
               Male
             </label>
-          
+
             <label>
               <Field name="gender" component="input" type="radio" value="female" />{' '}
               Female
@@ -84,7 +83,7 @@ class UserMemberForm extends Component {
                   <option value={cat} key={cat}>{cat}</option>
                 ))
               }
-            </Field> 
+            </Field>
           </div>
         </div>
 
@@ -107,7 +106,7 @@ class UserMemberForm extends Component {
         <div class="row">
           <button type="submit" class="btn btn-sm btn-success">
             Submit
-          </button>  
+          </button>
         </div>
       </form>
     );
