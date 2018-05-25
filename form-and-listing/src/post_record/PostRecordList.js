@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import PostRecordAction from './PostRecordAction';
-import postRecord from '../api/postRecord';
+// import postRecordApi from '../api/postRecordApi';
 
 class PostRecordList extends Component {
   // in this case we have not used any event handlers like button click etc

@@ -1,4 +1,4 @@
-class PostRecord {
+class PostRecordApi {
   static getAllPostRecords() {
     return fetch('https://api-proj.herokuapp.com/posts').then(response => {
       return response.json();
@@ -8,4 +8,4 @@ class PostRecord {
   }
 }
 
-export default PostRecord;
+export default PostRecordApi;
