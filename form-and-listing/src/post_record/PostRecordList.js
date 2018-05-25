@@ -1,20 +1,30 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import PostRecordAction from './PostRecordAction';
+import axios from 'axios';
 // import postRecordApi from '../api/postRecordApi';
 
 class PostRecordList extends Component {
   // in this case we have not used any event handlers like button click etc
   // so we have to load api records before component mount (not exactly but similar to js onload event)
   componentDidMount() {
-    fetch('https://api-proj.herokuapp.com/posts')
+    // fetch('https://api-proj.herokuapp.com/posts')
+    //   .then(response => {
+    //     return response.json()
+    //   })
+    //   .then(json => {
+    //     this.props.PostRecordsDispatch(json);
+    //   })
+    //   .catch(error => {
+    //     return error;
+    //   });
+
+    axios.get('https://api-proj.herokuapp.com/posts')
       .then(response => {
-        return response.json()
+        return response.data
       })
-      .then(json => {
-        this.props.PostRecordsDispatch(json);
-      })
-      .catch(error => {
+      .then(data => {this.props.PostRecordsDispatch(data)})
+      .catch(function (error) {
         return error;
       });
   }
