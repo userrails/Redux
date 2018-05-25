@@ -23,7 +23,9 @@ class PostRecordList extends Component {
       .then(response => {
         return response.data
       })
-      .then(data => {this.props.PostRecordsDispatch(data)})
+      .then(data => {
+        this.props.PostRecordsDispatch(data)
+      })
       .catch(function (error) {
         return error;
       });
