@@ -986,3 +986,23 @@ class PostRecord extends Component {
 
 export default PostRecord;
 ```
+
+By using Axios packages code may looks like this:
+```
+npm install axios --save
+```
+
+```
+import axios from 'axios'
+
+axios.get('https://api-proj.herokuapp.com/posts')
+  .then(response => {
+    return response.data
+  })
+  .then(data => {
+    this.props.PostRecordsDispatch(data)
+  })
+  .catch(function (error) {
+    return error;
+  });
+```
