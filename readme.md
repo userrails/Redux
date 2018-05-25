@@ -966,7 +966,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(PostRecordList);
 ```
 
 5. display the results now -> post_record/index.js
-
+```
 import React, { Component } from 'react';
 import PostRecordList from './PostRecordList';
 import store from '.././configureStore';
@@ -985,3 +985,4 @@ class PostRecord extends Component {
 }
 
 export default PostRecord;
+```
