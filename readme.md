@@ -870,3 +870,97 @@ const store = createStore(
 );
 ```
 
+WorkAround with WebService calls:
+----------------------------------
+1. actionTypes.js
+```
+export const GET_ALL_POST_RECORDS = 'GET_ALL_POST_RECORDS';
+```
+
+2. post_record/PostRecordAction.js
+```
+import {GET_ALL_POST_RECORDS} from '../actionTypes';
+
+export default function PostRecordAction(post_records) {
+  return {
+    type: GET_ALL_POST_RECORDS,
+    payload: post_records
+  }
+}
+```
+
+3. post_record/postRecordReducer.js
+```
+const initialState = {
+  post_records: []
+};
+
+const postRecordReducer = (state=initialState, action) => {
+  console.log('1. post record reducer is running');
+  switch(action.type) {
+    case 'GET_ALL_POST_RECORDS':
+      console.log('258885885.state-rootReducer', state);
+      return {...state, post_records: action.payload};
+    default:
+      console.log('3.state-default', state);
+      return state;
+  }
+};
+
+export default postRecordReducer;
+```
+
+4. post_record/PostRecordList.js
+```
+import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import PostRecordAction from './PostRecordAction';
+
+class PostRecordList extends Component {
+  // in this case we have not used any event handlers like button click etc
+  // so we have to load api records before component mount (not exactly but similar to js onload event)
+  componentDidMount() {
+    fetch('https://api-proj.herokuapp.com/posts')
+      .then(response => {
+        return response.json()
+      })
+      .then(json => {
+        this.props.PostRecordsDispatch(json);
+      })
+      .catch(error => {
+        return error;
+      });
+  }
+render () {
+    if (this.props.post_records) {
+      return (
+        <ul>
+          {
+            this.props.post_records.map(post_record => (
+              <li key={post_record.id}>Post -> {post_record.id}--{post_record.name}</li>
+            ))};
+        </ul>
+      );
+    }
+    else {
+      return (
+        <div>
+          <h2>No items found on this list.</h2>
+        </div>
+        )
+    }
+  }
+}
+
+const mapStateToProps = state => {
+  return {post_records: state.postRecordReducer.post_records}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    PostRecordsDispatch: post_record => dispatch(PostRecordAction(post_record))
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostRecordList);
+```
