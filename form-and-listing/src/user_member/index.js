@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import UserMemberForm from './UserMemberForm';
-import store from '.././configureStore';
-import {Provider} from 'react-redux';
 import UserMemberDetail from './UserMemberDetail';
 
 class UserMember extends Component {
   render () {
     return(
-      <Provider store={store}>
         <div>
           <div className="form-group">
             <UserMemberForm />
@@ -16,7 +13,6 @@ class UserMember extends Component {
             <UserMemberDetail />
           </div>
         </div>
-      </Provider>
     )
   }
 }
