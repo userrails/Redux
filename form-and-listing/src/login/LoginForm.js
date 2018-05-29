@@ -3,12 +3,20 @@ import { Field, reduxForm } from 'redux-form';
 import  LoginAction  from './LoginAction';
 
 const required = value => (value ? undefined : 'Required');
-const maxLength = max => value =>
-  value && value.length > max ? `Must be ${max} characters or less` : undefined
-const maxLength5 = maxLength(50)
-export const minLength = min => value =>
-  value && value.length < min ? `Must be ${min} characters or more` : undefined
-export const minLength2 = minLength(10)
+// const maxLength = max => value =>
+//   value && value.length > max ? `Must be ${max} characters or less` : undefined
+// const maxLength5 = maxLength(50)
+// export const minLength = min => value =>
+//   value && value.length < min ? `Must be ${min} characters or more` : undefined
+// export const minLength2 = minLength(10)
+const email = value =>
+  value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
+    'Invalid email address' : undefined
+const tooOld = value =>
+  value && value > 65 ? 'You might be too old for this' : undefined
+const aol = value =>
+  value && /.+@aol\.com/.test(value) ?
+    'Really? You still use AOL for your email?' : undefined
 
 const renderField = ({
   input,
@@ -41,16 +49,16 @@ class LoginForm extends Component {
             <p>
               <label htmlFor="Email">Email</label>
             </p>
-            <Field name="email" component="input" type="text" component={renderField} validate={[required, maxLength5, minLength2]} />
+            <Field name="email" component="input" type="email" component={renderField} validate={[required, email]} warn={aol} />
           </div>
         </div>
 
         <div class="row">
           <p>
-            <label htmlFor="password">Last name:</label>
+            <label htmlFor="password">Password:</label>
           </p>
           <div class="form-group">
-            <Field name="password" component="input" type="text" />
+            <Field name="password" component="input" type="password" />
           </div>
         </div>
 
