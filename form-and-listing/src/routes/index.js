@@ -10,6 +10,7 @@ import Category from '.././category/';
 import User from '.././user/';
 import UserMember from '.././user_member/';
 import PostRecord from '.././post_record/';
+import LoginPage from '../login/';
 
 export default () => {
   return (
@@ -23,6 +24,7 @@ export default () => {
       <Route path="/user" component={User} />
       <Route path="/user_member" component={UserMember} />
       <Route path="/post_records" component={PostRecord} />
+      <Route path="/login" component={LoginPage} />
     </Switch>
   )
 }
