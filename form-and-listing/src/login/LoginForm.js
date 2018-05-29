@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import  LoginAction  from './LoginAction';
 
 const required = value => (value ? undefined : 'Required');

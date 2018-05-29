@@ -6,6 +6,7 @@ import userMemberReducer from './user_member/userMemberReducer';
 import userReducer from './user/userReducer';
 import { reducer as formReducer } from 'redux-form'
 import postRecordReducer from './post_record/postRecordReducer';
+import loginReducer from './login/loginReducer';
 
 const rootReducer = combineReducers({
   postReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   userReducer,
   userMemberReducer,
   form: formReducer,
-  postRecordReducer
+  postRecordReducer,
+  loginReducer
 });
 
 export default rootReducer;
