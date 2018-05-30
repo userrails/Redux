@@ -1,0 +1,25 @@
+# @url = https://api-proj.herokuapp.com
+@url = http://lvh.me:4000
+
+### sign_up
+POST {{url}}/api/users/sign_up
+Content-Type: application/json
+
+{
+  "auth": {
+    "email": "user1@asimisoft.com",
+    "password": "123123123",
+    "password_confirmation": "123123123"
+  }
+}
+
+### api user token
+POST {{url}}/api/user_token
+Content-Type: application/json
+
+{
+  "auth": {
+    "email": "user@asimisoft.com",
+    "password": "123123123"
+  }
+}
