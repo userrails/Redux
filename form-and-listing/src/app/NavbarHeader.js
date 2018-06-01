@@ -56,6 +56,9 @@ class NavbarHeader extends Component {
               <NavItem eventKey={1} href="/login">
                 Login
               </NavItem>
+              <NavItem eventKey={1} href="/logout">
+                Logout
+              </NavItem>
               <NavItem eventKey={2} href="#">
                 Link Right
               </NavItem>
