@@ -1,5 +1,6 @@
 import { SESSION_CREATE, GLOBAL_ERROR } from '../actionTypes';
 import axios from 'axios';
+import { push } from "react-router-redux";
 
 const LoginAction = ({email, password}) => dispatch => {
   return axios
@@ -11,6 +12,7 @@ const LoginAction = ({email, password}) => dispatch => {
         type: SESSION_CREATE,
         payload: response.data
       })
+      dispatch(push('/'))
     })
     .catch(error => dispatch({ type: GLOBAL_ERROR, payload: error.response.payload}))
 }

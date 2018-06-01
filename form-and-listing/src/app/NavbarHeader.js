@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+import { LogoutFunction } from "./../login/LogoutAction";
+
 class NavbarHeader extends Component {
+  _handleLogout = () => {
+    this.props.LogoutFunction();
+  }
+
   render () {
     return (
       <div>
@@ -56,7 +63,7 @@ class NavbarHeader extends Component {
               <NavItem eventKey={1} href="/login">
                 Login
               </NavItem>
-              <NavItem eventKey={1} href="/logout">
+              <NavItem eventKey={1} onClick={this._handleLogout}>
                 Logout
               </NavItem>
               <NavItem eventKey={2} href="#">
@@ -71,4 +78,4 @@ class NavbarHeader extends Component {
   }
 }
 
-export default NavbarHeader;
+export default connect(null, { LogoutFunction })(NavbarHeader);
