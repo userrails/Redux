@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
 import  LoginAction  from './LoginAction';
-import axios from 'axios';
 
 const required = value => (value ? undefined : 'Required');
 // const maxLength = max => value =>
@@ -14,8 +12,6 @@ const required = value => (value ? undefined : 'Required');
 const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
     'Invalid email address' : undefined
-const tooOld = value =>
-  value && value > 65 ? 'You might be too old for this' : undefined
 const aol = value =>
   value && /.+@aol\.com/.test(value) ?
     'Really? You still use AOL for your email?' : undefined
