@@ -13,7 +13,7 @@ import User from '.././user/';
 import UserMember from '.././user_member/';
 import PostRecord from '.././post_record/';
 import LoginPage from '../login/';
-import Logout from '../logout/';
+//import Logout from '../logout/';
 
 
 // Create an enhanced history that syncs navigation events with the store
@@ -36,7 +36,6 @@ export default () => {
         <PrivateRoute path="/post_records" component={PostRecord} />
 
         <Route path="/login" component={LoginPage} />
-        <Route path="/logout" component={Logout} />
       </Switch>
     </ConnectedRouter>
   )
