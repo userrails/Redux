@@ -1,4 +1,4 @@
-import { SESSION_CREATE, GLOBAL_ERROR } from '../actionTypes';
+import { LOGIN, GLOBAL_ERROR } from '../actionTypes';
 import axios from 'axios';
 import { push } from "react-router-redux";
 
@@ -9,7 +9,7 @@ const LoginAction = ({email, password}) => dispatch => {
       localStorage.setItem("jwt", response.data.jwt)
 
       dispatch({
-        type: SESSION_CREATE,
+        type: LOGIN,
         payload: response.data
       })
       dispatch(push('/'))

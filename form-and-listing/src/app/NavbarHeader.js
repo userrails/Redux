@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import { LogoutFunction } from "./../login/LogoutAction";
+import { LogoutFunction } from "./../auth/LogoutAction";
 
 class NavbarHeader extends Component {
   _handleLogout = () => {
@@ -88,7 +88,7 @@ class NavbarHeader extends Component {
 
 function mapStateToProps(state) {
   return {
-    is_authenticated: state.loginReducer.is_Authenticated
+    is_authenticated: state.authReducer.is_Authenticated
   }
 }
 

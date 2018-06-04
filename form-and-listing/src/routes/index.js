@@ -12,9 +12,7 @@ import Category from '.././category/';
 import User from '.././user/';
 import UserMember from '.././user_member/';
 import PostRecord from '.././post_record/';
-import LoginPage from '../login/';
-//import Logout from '../logout/';
-
+import LoginPage from '../auth/';
 
 // Create an enhanced history that syncs navigation events with the store
 //const history = syncHistoryWithStore(browserHistory, store)
