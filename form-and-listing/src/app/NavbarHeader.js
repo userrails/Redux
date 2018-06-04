@@ -28,54 +28,68 @@ class NavbarHeader extends Component {
               <NavItem eventKey={2} href="/about">
                 About
               </NavItem>
-              <NavItem eventKey={2}>
-                <Link to="/post">
-                  Post
+              { this.props.is_authenticated && (
+                <React.Fragment>
+                <NavItem eventKey={2}>
+                  <Link to="/post">
+                    Post
                 </Link>
-              </NavItem>
+                </NavItem>
 
-              <NavItem eventKey={2}>
-                <Link to="/blog">
-                  Blog
+                <NavItem eventKey={2}>
+                  <Link to="/blog">
+                    Blog
                 </Link>
+                </NavItem>
+                <NavItem eventKey={2} href="/category">
+                  Category
               </NavItem>
-              <NavItem eventKey={2} href="/category">
-                Category
+                <NavItem eventKey={2} href="/user">
+                  Add User
               </NavItem>
-              <NavItem eventKey={2} href="/user">
-                Add User
+                <NavItem eventKey={2} href="/user_member">
+                  Add User Member
               </NavItem>
-              <NavItem eventKey={2} href="/user_member">
-                Add User Member
+                <NavItem eventKey={2} href="/post_records">
+                  Post Records
               </NavItem>
-              <NavItem eventKey={2} href="/post_records">
-                Post Records
-              </NavItem>
-              <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-                <MenuItem eventKey={3.1}>Action</MenuItem>
-                <MenuItem eventKey={3.2}>Another action</MenuItem>
-                <MenuItem eventKey={3.3}>Something else here</MenuItem>
-                <MenuItem divider />
-                <MenuItem eventKey={3.3}>Separated link</MenuItem>
-              </NavDropdown>
-            </Nav>
+                <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                  <MenuItem eventKey={3.1}>Action</MenuItem>
+                  <MenuItem eventKey={3.2}>Another action</MenuItem>
+                  <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                  <MenuItem divider />
+                  <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                </NavDropdown>
+                </React.Fragment>
+                ) }
+                </Nav>
+
             <Nav pullRight>
-              <NavItem eventKey={1} href="/login">
-                Login
-              </NavItem>
-              <NavItem eventKey={1} onClick={this._handleLogout}>
-                Logout
-              </NavItem>
-              <NavItem eventKey={2} href="#">
-                Link Right
-              </NavItem>
+              {!this.props.is_authenticated && (
+                <React.Fragment>
+                  <NavItem eventKey={1} href="/login">
+                    Login
+                  </NavItem>
+                  <NavItem eventKey={2} href="#">
+                    Link Right
+                  </NavItem>
+                </React.Fragment>
+                )}
+                <NavItem eventKey={1} onClick={this._handleLogout}>
+                  Logout
+                </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
       </div>
     )
   }
 }
 
-export default connect(null, { LogoutFunction })(NavbarHeader);
+function mapStateToProps(state) {
+  return {
+    is_authenticated: state.loginReducer.is_Authenticated
+  }
+}
+
+export default connect(mapStateToProps, { LogoutFunction })(NavbarHeader);
