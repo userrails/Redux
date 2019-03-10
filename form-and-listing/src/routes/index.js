@@ -13,6 +13,7 @@ import User from '.././user/';
 import UserMember from '.././user_member/';
 import PostRecord from '.././post_record/';
 import LoginPage from '../auth/';
+import Ticket from '../ticket/';
 
 // Create an enhanced history that syncs navigation events with the store
 //const history = syncHistoryWithStore(browserHistory, store)
@@ -32,6 +33,7 @@ export default () => {
         <PrivateRoute path="/user" component={User} />
         <PrivateRoute path="/user_member" component={UserMember} />
         <PrivateRoute path="/post_records" component={PostRecord} />
+        <Route path="/ticket" component={Ticket} />
 
         <Route path="/login" component={LoginPage} />
       </Switch>

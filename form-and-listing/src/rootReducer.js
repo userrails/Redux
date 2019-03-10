@@ -7,6 +7,7 @@ import userReducer from './user/userReducer';
 import { reducer as formReducer } from 'redux-form'
 import postRecordReducer from './post_record/postRecordReducer';
 import authReducer from './auth/authReducer';
+import TicketReducer from './ticket/TicketReducer';
 import { routerReducer } from 'react-router-redux'
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   form: formReducer,
   postRecordReducer,
   authReducer,
+  TicketReducer,
   router: routerReducer
 });
 

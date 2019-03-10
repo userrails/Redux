@@ -6,4 +6,5 @@ export const ADD_USER_MEMBER = 'ADD_USER_MEMBER';
 export const GET_ALL_POST_RECORDS = 'GET_ALL_POST_RECORDS';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
-export const GLOBAL_ERROR = 'GLOBAL_ERROR'
+export const GLOBAL_ERROR = 'GLOBAL_ERROR';
+export const ADD_TICKET = 'ADD_TICKET';

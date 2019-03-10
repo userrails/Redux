@@ -28,6 +28,9 @@ class NavbarHeader extends Component {
               <NavItem eventKey={2} href="/about">
                 About
               </NavItem>
+              <NavItem eventKey={2} href="/ticket">
+                Ticket
+              </NavItem>
               { this.props.is_authenticated && (
                 <React.Fragment>
                 <NavItem eventKey={2}>
